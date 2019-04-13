@@ -331,13 +331,14 @@ namespace SharpLink
                         case "stats":
                             {
                                 Stats?.InvokeAsync(new LavalinkStats(message));
+                                logger.Log($"Received Dispatch (STATS)", LogSeverity.Debug);
 
                                 break;
                             }
 
                         default:
                             {
-                                logger.Log($"Received Uknown Dispatch ({(string)message["op"]})", LogSeverity.Debug);
+                                logger.Log($"Received Unknown Dispatch ({(string)message["op"]})", LogSeverity.Debug);
 
                                 break;
                             }
